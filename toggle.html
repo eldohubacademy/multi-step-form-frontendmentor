@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toggle Button</title>
+    <style>
+      /* Hide the default checkbox */
+      .toggle input {
+        display: none;
+      }
+
+      /* Style the toggle switch container */
+      .toggle {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      /* Style the slider (the visible part of the toggle) */
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 34px;
+      }
+
+      /* Style the circle inside the slider */
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+
+      /* Change the background color of the slider when the checkbox is checked */
+      input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      /* Move the circle to the right when the checkbox is checked */
+      input:checked + .slider:before {
+        transform: translateX(26px);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Toggle Button</h2>
+
+    <label class="toggle">
+      <input type="checkbox" />
+      <span class="slider"></span>
+    </label>
+  </body>
+</html>
