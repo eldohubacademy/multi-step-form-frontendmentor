@@ -1,3 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(89, 89, 126, 0.769);
+}
+
+.tabs {
+  background-image: url("./assets/images/bg-sidebar-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+.tabs button {
+  background-color: transparent;
+  border-radius: 50%;
+  width: 16px;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+}
+.tabs button div {
+  display: none;
+}
+
+form {
+  max-width: 82%;
+  margin: 10px auto;
+  margin-top: -45px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 18px;
+}
+
 .content-div {
   display: none;
 }
