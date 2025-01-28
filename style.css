@@ -3,6 +3,18 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --light-blue: hsl(206, 94%, 87%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+}
 body {
   background-color: rgba(89, 89, 126, 0.769);
 }
@@ -11,17 +23,31 @@ body {
   background-image: url("./assets/images/bg-sidebar-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
-  text-align: center;
+
   padding-top: 30px;
   padding-bottom: 60px;
+  text-align: center;
 }
+
 .tabs button {
   background-color: transparent;
-  border-radius: 50%;
-  width: 16px;
-  color: white;
-  border-color: white;
   cursor: pointer;
+  border: none;
+  color: white;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.tabs button span {
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.tabs button.active-button span,
+.tabs button:hover span {
+  background-color: var(--pastel-blue);
+  color: var(--marine-blue);
 }
 .tabs button div {
   display: none;
@@ -39,42 +65,209 @@ form {
 .content-div {
   display: none;
 }
+.content-div .title {
+  color: var(--marine-blue);
+  font-weight: bold;
+  font-size: 22px;
+}
 
+.content-div p {
+  color: var(--cool-gray);
+}
+.content-div label {
+  display: block;
+  color: var(--marine-blue);
+  margin: 7px 0;
+}
+.content-div-1 input {
+  padding: 10px;
+  color: var(--cool-gray);
+  width: 100%;
+  border-color: var(--cool-gray);
+  border-width: 1px;
+  border-radius: 5px;
+}
+.content-div-1 input:active {
+  outline: none;
+}
+.content-div-1 input:focus {
+  border-color: var(--marine-blue);
+  outline: none;
+}
+.content-div-1 input:invalid {
+  border-color: var(--strawberry-red);
+}
 .content-div.active-content {
   display: block;
 }
 
-/* Style the toggle button */
+.content-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+.content-footer-1 {
+  justify-content: end;
+}
+.content-footer .next {
+  color: white;
+  background-color: var(--marine-blue);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.content-footer .go-back {
+  background-color: transparent;
+  border: none;
+}
+
+.content-div input[type="radio"] {
+  display: none;
+}
+
+.content-div-2 label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 2px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.content-div-2 .options {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+.content-div-2 label {
+  display: flex;
+  gap: 5px;
+}
+.content-div .sub-title {
+  color: var(--marine-blue);
+  font-weight: bold;
+}
+.content-div-2 .offer {
+  color: var(--marine-blue);
+}
+.content-div-2 input[type="radio"]:checked + label {
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+.content-div-2 label:hover {
+  border-color: #007bff;
+  background-color: #e9f5ff;
+}
+.toggle-period {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-weight: bold;
+  color: var(--cool-gray);
+  margin: 15px 0px;
+  padding: 5px;
+  background-color: var(--alabaster);
+}
 .toggle-button {
   position: relative;
-  width: 60px;
-  height: 30px;
+  width: 30px;
+  height: 15px;
   border: none;
-  border-radius: 15px;
-  background-color: #ccc;
+  border-radius: 7.5px;
+  background-color: var(--marine-blue);
   cursor: pointer;
   outline: none;
   transition: background-color 0.3s ease;
 }
 
-/* Style the circle inside the toggle button */
 .toggle-button::before {
   content: "";
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 24px;
-  height: 24px;
+  top: 1.5px;
+  left: 1.5px;
+  width: 12px;
+  height: 12px;
   background-color: white;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 
-/* Change the background color and move the circle when the button is active (toggled) */
-.toggle-button.active {
-  background-color: #2196f3;
+.toggle-period:not(.active) span:first-child {
+  color: var(--marine-blue);
+}
+.toggle-period.active span:last-child {
+  color: var(--marine-blue);
 }
 
-.toggle-button.active::before {
-  transform: translateX(30px);
+.toggle-period.active .toggle-button::before {
+  transform: translateX(14px);
+}
+
+.ad-on-option {
+  display: flex;
+  margin: 12px 0px;
+  border: 1px solid var(--pastel-blue);
+  padding: 8px;
+  align-items: center;
+  gap: 12px;
+}
+.ad-on-option:hover {
+  cursor: pointer;
+}
+.ad-on-option > p {
+  margin-left: auto;
+}
+
+.ad-on-option > p:last-child {
+  color: var(--pastel-blue);
+  font-weight: bold;
+}
+
+/* Desktop  */
+
+@media screen and (min-width: 656px) {
+  main {
+    display: flex;
+    margin: 50px auto;
+    width: 86%;
+    background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  .tabs {
+    background-image: url("./assets/images/bg-sidebar-mobile.svg");
+    flex: 1;
+    border-radius: 5px;
+    text-align: left;
+    padding: 8px;
+  }
+  form {
+    max-width: 100%;
+    width: 70%;
+    flex: 4;
+    margin: 0;
+  }
+  .tabs button {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 12px;
+    text-align: start;
+    text-transform: uppercase;
+  }
+  .tabs button div {
+    display: block;
+  }
+  .tabs button p {
+    font: 11px;
+  }
+  .tabs button p:last-child {
+    font-weight: bold;
+  }
 }
