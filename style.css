@@ -229,6 +229,10 @@ form {
   font-weight: bold;
 }
 
+.content-div-5 {
+  text-align: center;
+}
+
 /* Desktop  */
 
 @media screen and (min-width: 656px) {
