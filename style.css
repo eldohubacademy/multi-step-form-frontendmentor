@@ -198,14 +198,14 @@ form {
   transition: transform 0.3s ease;
 }
 
-.toggle-period:not(.active) span:first-child {
+/* .toggle-period:not(.active) span:first-child {
   color: var(--marine-blue);
 }
 .toggle-period.active span:last-child {
   color: var(--marine-blue);
-}
+} */
 
-.toggle-period.active .toggle-button::before {
+.toggle-period .toggle-button.active::before {
   transform: translateX(14px);
 }
 
@@ -273,5 +273,9 @@ form {
   }
   .tabs button p:last-child {
     font-weight: bold;
+  }
+  .content-footer {
+    position: static;
+    margin-top: 50px;
   }
 }

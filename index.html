@@ -74,13 +74,16 @@
             <button type="button" id="step-1-next" class="next">Next 1</button>
           </div>
         </div>
-        <div id="step-2-content-monthly" class="content-div content-div-2">
+        <div
+          id="step-2-content"
+          class="content-div content-div-2 active-period active-content"
+        >
           <p class="title">Select your plan</p>
           <p>You have the option of monthly or yearly billing.</p>
           <div class="options">
             <input type="radio" name="montly-plan" id="arcade" />
 
-            <label for="arcade">
+            <label for="arcade" class="plan-label">
               <img src="./assets/images/icon-arcade.svg" alt="arcade icon" />
               <div>
                 <p class="sub-title">Arcade</p>
@@ -89,7 +92,7 @@
             </label>
 
             <input type="radio" name="montly-plan" id="advanced" />
-            <label for="advanced">
+            <label for="advanced" class="plan-label">
               <img
                 src="./assets/images/icon-advanced.svg"
                 alt="advanced icon"
@@ -100,7 +103,7 @@
               </div>
             </label>
             <input type="radio" name="montly-plan" id="pro" />
-            <label for="pro">
+            <label for="pro" class="plan-label">
               <img src="./assets/images/icon-pro.svg" alt="pro icon" />
               <div>
                 <p class="sub-title">Pro</p>
@@ -120,61 +123,15 @@
             <button type="button" id="step-1-next" class="next">Next</button>
           </div>
         </div>
-        <div id="step-2-content-yearly" class="content-div content-div-2">
-          <p class="title">Select your plan</p>
-          <p>You have the option of monthly or yearly billing.</p>
-          <div class="options">
-            <input type="radio" name="montly-plan" id="arcade-yearly" />
 
-            <label for="arcade-yearly">
-              <img src="./assets/images/icon-arcade.svg" alt="arcade icon" />
-              <div>
-                <p class="sub-title">Arcade</p>
-                <p>$90/mo</p>
-                <p class="offer">2 months free</p>
-              </div>
-            </label>
-
-            <input type="radio" name="montly-plan" id="advanced-yearly" />
-            <label for="advanced-yearly">
-              <img
-                src="./assets/images/icon-advanced.svg"
-                alt="advanced icon"
-              />
-              <div>
-                <p class="sub-title">Advanced</p>
-                <p>$120/mo</p>
-                <p class="offer">2 months free</p>
-              </div>
-            </label>
-            <input type="radio" name="montly-plan" id="pro-yearly" />
-            <label for="pro-yearly">
-              <img src="./assets/images/icon-pro.svg" alt="pro icon" />
-              <div>
-                <p class="sub-title">Pro</p>
-                <p>$150/mo</p>
-                <p class="offer">2 months free</p>
-              </div>
-            </label>
-          </div>
-          <div class="toggle-period">
-            <span>Monthly</span>
-            <button type="button" class="toggle-button" id="toggleBtn"></button>
-            <span>Yearly</span>
-          </div>
-          <div class="content-footer">
-            <button type="button" id="go-back-2" class="go-back">
-              Go Back
-            </button>
-            <button type="button" id="step-1-next" class="next">Next</button>
-          </div>
-        </div>
-
-        <div id="step-3-content-monthly" class="content-div">
+        <div
+          id="step-3-content"
+          class="content-div active-period active-content"
+        >
           <p class="title">Pick add-ons</p>
           <p>Add-ons help enhance your gaming experience.</p>
           <div class="ad-ons">
-            <div role="button" class="ad-on-option">
+            <div role="button" class="add-on-option" id="add-on-online">
               <input type="checkbox" name="online" id="online" />
               <div>
                 <p class="sub-title">Online service</p>
@@ -182,7 +139,8 @@
               </div>
               <p>+$1/mo</p>
             </div>
-            <div role="button" class="ad-on-option">
+
+            <div role="button" class="add-on-option" id="add-on-larger">
               <input type="checkbox" name="larger" id="larger" />
               <div>
                 <p class="sub-title">Larger Storage</p>
@@ -190,7 +148,8 @@
               </div>
               <p>+$2/mo</p>
             </div>
-            <div role="button" class="ad-on-option">
+
+            <div role="button" class="add-on-option" id="add-on-customizable">
               <input type="checkbox" name="customizable" id="customizable" />
               <div>
                 <p class="sub-title">Customizable Profile</p>
@@ -206,43 +165,8 @@
             <button type="button" id="step-1-next" class="next">Next</button>
           </div>
         </div>
-        <div id="step-3-content-yearly" class="content-div">
-          <p class="title">Pick add-ons</p>
-          <p>Add-ons help enhance your gaming experience.</p>
-          <div class="ad-ons">
-            <div role="button" class="ad-on-option">
-              <input type="checkbox" name="online" id="online" />
-              <div>
-                <p class="sub-title">Online service</p>
-                <p>Access to multiplayer games</p>
-              </div>
-              <p>+$10/mo</p>
-            </div>
-            <div role="button" class="ad-on-option">
-              <input type="checkbox" name="larger" id="larger" />
-              <div>
-                <p class="sub-title">Larger Storage</p>
-                <p>Extra 1TB of cloud save</p>
-              </div>
-              <p>+$20/mo</p>
-            </div>
-            <div role="button" class="ad-on-option">
-              <input type="checkbox" name="customizable" id="customizable" />
-              <div>
-                <p class="sub-title">Customizable Profile</p>
-                <p>Custom theme on your profile</p>
-              </div>
-              <p>+$20/mo</p>
-            </div>
-          </div>
-          <div class="content-footer">
-            <button type="button" id="go-back-2" class="go-back">
-              Go Back
-            </button>
-            <button type="button" id="step-1-next" class="next">Next</button>
-          </div>
-        </div>
-        <div id="step-4-content-monthly" class="content-div">
+
+        <div id="step-4-content" class="content-div">
           <p class="title">Finishing up</p>
           <p>Double-check everything looks OK before confirming.</p>
           <!-- dynamic content -->
@@ -254,22 +178,8 @@
             <button type="button" id="step-1-next" class="next">Next</button>
           </div>
         </div>
-        <div id="step-4-content-yearly" class="content-div">
-          <p class="title">Finishing up</p>
-          <p>Double-check everything looks OK before confirming.</p>
-          <!-- dynamic content -->
-          <div class="summary">Summary</div>
-          <div class="content-footer">
-            <button type="button" id="go-back-2" class="go-back">
-              Go Back
-            </button>
-            <button type="button" id="step-1-next" class="next">Next</button>
-          </div>
-        </div>
-        <div
-          id="step-5-content"
-          class="content-div content-div-5 active-content"
-        >
+
+        <div id="step-5-content" class="content-div content-div-5">
           <img src="./assets/images/icon-thank-you.svg" alt="thank you icon" />
           <p class="title">Tnak you</p>
           <p>
@@ -281,24 +191,6 @@
       </form>
     </main>
 
-    <script>
-      let toggleBtnState = false;
-      document.querySelectorAll(".toggle-button").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.target.parentElement.classList.toggle("active");
-          toggleBtnState = !toggleBtnState;
-        });
-      });
-
-      document.querySelectorAll(".ad-on-option").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          if (event.target.tagName === "INPUT") {
-            return;
-          }
-          const checkbox = btn.querySelector('input[type="checkbox"]');
-          checkbox.checked = !checkbox.checked;
-        });
-      });
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
